@@ -7,7 +7,10 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProductsTable
 {
@@ -43,7 +46,17 @@ class ProductsTable
                     ->label('Date Inserted'),
             ])
             ->filters([
-                //
+                TernaryFilter::make('online')
+                    ->label('Product Status')
+                    ->placeholder('All products')
+                    ->trueLabel('Online')
+                    ->falseLabel('Offline'),
+                Filter::make('low_stock')
+                    ->label('Low Stock')
+                    ->query(fn (Builder $query): Builder => $query->where('quantita', '<', 10)),
+                Filter::make('price_range')
+                    ->label('High Price (> 100)')
+                    ->query(fn (Builder $query): Builder => $query->where('prezzo', '>', 100)),
             ])
             ->recordActions([
                 ViewAction::make(),
