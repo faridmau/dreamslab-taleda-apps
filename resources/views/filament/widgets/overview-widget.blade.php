@@ -18,8 +18,8 @@
             <!-- Card 2: Customers -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-5 flex items-center justify-between">
                 <div>
-                    <div class="fi-wi-stats-overview-stat-label">{{ __('Total Customers') }}</div>
-                    <div class="text-3xl font-bold text-gray-900 dark:text-white">{{ $stats['total_customers'] }}</div>
+                    <div class="fi-wi-stats-overview-stat-label">{{ __('Total Brands') }}</div>
+                    <div class="text-3xl font-bold text-gray-900 dark:text-white">{{ $stats['total_brands'] }}</div>
 
                 </div>
 

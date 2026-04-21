@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\MagentoCategory;
 use App\Models\MagentoCustomer;
@@ -20,7 +21,7 @@ class OverviewWidget extends Widget
     {
         $stats = [
             'total_categories' => Category::count(),
-            'total_customers' => 0,
+            'total_brands' => Brand::count(),
             'total_orders' => Order::count(),
             'total_products' => Product::count(),
         ];
