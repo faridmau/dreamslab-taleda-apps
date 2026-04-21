@@ -3,11 +3,13 @@
 namespace App\Filament\Resources\Products\Pages;
 
 use App\Filament\Resources\Products\ProductResource;
+use App\Traits\MaxContentWidth;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListProducts extends ListRecords
 {
+    use MaxContentWidth;
     protected static string $resource = ProductResource::class;
 
     protected function getHeaderActions(): array
