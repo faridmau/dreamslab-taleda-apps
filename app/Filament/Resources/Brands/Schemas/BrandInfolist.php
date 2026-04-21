@@ -18,7 +18,7 @@ class BrandInfolist
                 TextEntry::make('eliminato')
                     ->badge(),
                 TextEntry::make('dataInserimento')
-                    ->date(),
+                    ->date('d.m.Y'),
                 TextEntry::make('link'),
                 TextEntry::make('linkEn'),
                 TextEntry::make('visibileMenu')

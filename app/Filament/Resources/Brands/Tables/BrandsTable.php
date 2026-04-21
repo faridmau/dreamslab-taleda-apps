@@ -25,7 +25,7 @@ class BrandsTable
                 TextColumn::make('eliminato')
                     ->badge(),
                 TextColumn::make('dataInserimento')
-                    ->date()
+                    ->date('d.m.Y')
                     ->sortable(),
                 TextColumn::make('link')
                     ->searchable(),
@@ -42,12 +42,12 @@ class BrandsTable
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
+                // EditAction::make(),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                // BulkActionGroup::make([
+                //     DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }

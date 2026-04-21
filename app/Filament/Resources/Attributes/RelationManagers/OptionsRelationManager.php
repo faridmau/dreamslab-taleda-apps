@@ -61,7 +61,7 @@ class OptionsRelationManager extends RelationManager
                     ->searchable()
                     ->label('Option (English)'),
                 TextColumn::make('dataInserimento')
-                    ->date()
+                    ->date('d.m.Y')
                     ->sortable()
                     ->label('Date Inserted'),
                 TextColumn::make('eliminato')
@@ -72,14 +72,14 @@ class OptionsRelationManager extends RelationManager
                 //
             ])
             ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
+                // EditAction::make(),
+                // DeleteAction::make(),
             ])
             ->toolbarActions([
-                CreateAction::make(),
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                // CreateAction::make(),
+                // BulkActionGroup::make([
+                //     DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }

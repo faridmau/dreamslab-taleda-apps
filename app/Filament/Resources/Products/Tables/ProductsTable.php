@@ -38,7 +38,7 @@ class ProductsTable
                     ->badge()
                     ->label('Online'),
                 TextColumn::make('dataInserimento')
-                    ->date()
+                    ->date('d.m.Y')
                     ->sortable()
                     ->label('Date Inserted'),
             ])
@@ -47,12 +47,12 @@ class ProductsTable
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
+                // EditAction::make(),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                // BulkActionGroup::make([
+                //     DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }

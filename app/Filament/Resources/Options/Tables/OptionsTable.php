@@ -28,7 +28,7 @@ class OptionsTable
                     ->searchable()
                     ->label('Attribute'),
                 TextColumn::make('dataInserimento')
-                    ->date()
+                    ->date('d.m.Y')
                     ->sortable()
                     ->label('Date Inserted'),
                 TextColumn::make('eliminato')
@@ -39,12 +39,12 @@ class OptionsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                // EditAction::make(),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                // BulkActionGroup::make([
+                //     DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }

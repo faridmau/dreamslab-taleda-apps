@@ -35,7 +35,7 @@ class OrdersTable
                     ->colors(['no' => 'danger', 'si' => 'success'])
                     ->label('Paid'),
                 TextColumn::make('data_ord')
-                    ->dateTime()
+                    ->date('d.m.Y')
                     ->sortable()
                     ->label('Order Date'),
                 TextColumn::make('stato')

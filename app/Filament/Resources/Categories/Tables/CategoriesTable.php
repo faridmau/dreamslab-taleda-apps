@@ -34,7 +34,7 @@ class CategoriesTable
                     ->badge()
                     ->label('Menu Visibility'),
                 TextColumn::make('dataInserimento')
-                    ->date()
+                    ->date('d.m.Y')
                     ->sortable()
                     ->label('Date Inserted'),
             ])
@@ -42,12 +42,12 @@ class CategoriesTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                // EditAction::make(),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                // BulkActionGroup::make([
+                //     DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }
