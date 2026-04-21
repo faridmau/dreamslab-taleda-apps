@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\LoginPage;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -27,7 +28,10 @@ class BackendPanelProvider extends PanelProvider
             ->default()
             ->id('backend')
             ->path('backend')
-            ->login()
+            ->login(LoginPage::class)
+            ->brandName('')
+            ->brandLogo(asset('assets/images/logo.svg'))
+            ->brandLogoHeight('4rem')
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -54,6 +58,7 @@ class BackendPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/backend/theme.css');
     }
 }
