@@ -6,7 +6,7 @@
         ->map(function($attribute) {
             $pivotOptionId = $attribute->pivot->key_opz;
             $option = $attribute->options->firstWhere('key_opz', $pivotOptionId);
-            
+
             return [
                 'attribute' => $attribute->campo,
                 'attribute_it' => $attribute->campoIt,
