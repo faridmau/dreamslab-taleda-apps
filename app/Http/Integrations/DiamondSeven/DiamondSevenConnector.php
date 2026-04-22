@@ -49,8 +49,12 @@ class DiamondSevenConnector extends Connector
             $config['proxy'] = config('services.diamond_seven.proxy');
         }
 
-        // Disable SSL verification in local development only
-        if (config('services.diamond_seven.verify_ssl', true) === false) {
+        // Use custom certificate if available
+        $certPath = storage_path('certs/diamondseven.pem');
+        if (file_exists($certPath)) {
+            $config['verify'] = $certPath;
+        } else if (config('services.diamond_seven.verify_ssl', true) === false) {
+            // Disable SSL verification in local development only
             $config['verify'] = false;
         }
 
