@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Filament\Widgets\DiamondSevenOverviewWidget;
 use App\Filament\Widgets\OverviewWidget;
 use App\Traits\MaxContentWidth;
 use Filament\Widgets\Widget;
@@ -17,6 +18,7 @@ class Dashboard extends \Filament\Pages\Dashboard
     {
         return [
             OverviewWidget::class,
+            DiamondSevenOverviewWidget::class,
         ];
     }
 }

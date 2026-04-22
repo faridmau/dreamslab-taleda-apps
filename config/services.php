@@ -34,5 +34,12 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'diamond_seven' => [
+        'base_url' => env('DIAMOND_SEVEN_BASE_URL', 'https://server.diamondseven.swiss:10555/api/v1/diamond/dataexchange'),
+        'PartnerKey' => env('DIAMOND_SEVEN_PARTNER_KEY'),
+        'use_proxy' => env('DIAMOND_SEVEN_USE_PROXY', false),
+        'proxy' => env('DIAMOND_SEVEN_PROXY', 'socks5://127.0.0.1:9090'),
+        'verify_ssl' => env('DIAMOND_SEVEN_VERIFY_SSL', true),
+    ],
 
 ];
